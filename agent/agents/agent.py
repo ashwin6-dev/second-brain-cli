@@ -14,7 +14,6 @@ class Agent:
 
     def invoke(self, query: str):
         chat = self.client.chats.create(model=self.model, config=self.config)
-
         response = chat.send_message(query)
 
         return response
