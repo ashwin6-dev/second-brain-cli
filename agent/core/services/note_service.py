@@ -2,6 +2,7 @@ from agent.core.config import get_user_config
 from pathlib import Path
 import shutil
 from agent.core.vector_db.setup import client
+import uuid
 
 notes_collection = client.get_or_create_collection('notes')
 
@@ -18,7 +19,7 @@ def add_file(filepath):
     inbox_dir.mkdir(parents=True, exist_ok=True)
 
     destination_path = inbox_dir / source_path.name
-    shutil.move(str(source_path), str(destination_path))
+    shutil.copy2(str(source_path), str(destination_path))
 
     file_content = source_path.read_text()
     metadata = {
@@ -28,6 +29,7 @@ def add_file(filepath):
     }
 
     notes_collection.add(
+        ids=[str(uuid.uuid4())],
         documents=[file_content],
         metadatas=[metadata]
     )
