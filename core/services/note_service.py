@@ -33,3 +33,11 @@ def add_file(filepath):
         documents=[file_content],
         metadatas=[metadata]
     )
+
+def get_similar_notes(note_content, k=5):
+    result = notes_collection.query(
+        query_texts=[note_content],
+        n_results=k,
+    )
+
+    return result['metadatas']

@@ -5,7 +5,7 @@ console = Console()
 
 class ViewCommand:
     def __init__(self, subparsers):
-        self.parser = subparsers.add_parser("view", help="Add a new note")
+        self.parser = subparsers.add_parser("view", help="View the contents of a category")
         self.parser.add_argument("category", type=str, help="The category to view - inbox, project, area, resource, archive")
 
     def execute_args(self, args):

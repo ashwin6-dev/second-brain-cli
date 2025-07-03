@@ -36,7 +36,6 @@ def organise_note(note_name: str, category: str, folder_name: str):
 
     shutil.move(str(note_path), str(folder_path))
 
-    print (notes_collection.get())
     note = notes_collection.get(
         where={
             "$and": [
@@ -54,4 +53,3 @@ def organise_note(note_name: str, category: str, folder_name: str):
         ids=note['ids'],
         metadatas=[new_metadata]
     )
-    print (notes_collection.get())
