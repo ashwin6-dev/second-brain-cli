@@ -1,14 +1,14 @@
-from agent.core.config import get_user_config
+from core.config import get_user_config
 from pathlib import Path
 import shutil
-from agent.core.vector_db.setup import client
+from core.vector_db.setup import client
 import uuid
 
 notes_collection = client.get_or_create_collection('notes')
 
 def get_inbox_path():
-    brain_location = get_user_config()
-    path = Path(brain_location['brain_location']) / 'inbox'
+    user_config = get_user_config()
+    path = Path(user_config['brain_location']) / 'inbox'
 
     return path
 

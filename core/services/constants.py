@@ -1,0 +1,5 @@
+PROJECT_FOLDER = 'project'
+AREA_FOLDER = 'area'
+RESOURCE_FOLDER = 'resource'
+ARCHIVE_FOLDER = 'archive'
+INBOX_FOLDER = 'inbox'

@@ -2,3 +2,4 @@ google-genai
 pathlib
 chromadb
 sentence-transformers
+rich

@@ -1,4 +1,4 @@
-from agent.core.config import get_user_config
+from core.config import get_user_config
 from pathlib import Path
 import chromadb
 
